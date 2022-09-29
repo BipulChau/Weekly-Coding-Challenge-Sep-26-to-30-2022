@@ -13,3 +13,22 @@
 # is_disarium(8) ➞ True
 # Notes
 # Position of the digit is 1-indexed.
+
+
+def check_disarium_number(num):
+    str_num = str(num)
+    num2 = 0
+    for i in range(len(str_num)):
+        n = int(str_num[i])
+        num2 += n ** (i + 1)
+    if num == num2:
+        return True
+    return False
+
+
+print(check_disarium_number(75))  # False
+print(check_disarium_number(135))  # True
+print(check_disarium_number(544))  # False
+print(check_disarium_number(518))  # True
+print(check_disarium_number(466))  # False
+print(check_disarium_number(8))  # True
